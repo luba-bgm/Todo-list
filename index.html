@@ -8,17 +8,33 @@
 <body>
     <header class="page-header">
         <h1>Список задач</h1>
-        <form id="NewItem">
+        <form id="NewTask">
             <h2>Новая задача</h2>
-            <input type = "text" id = NameOfItem placeholder="Название задачи...">
+            <input type = "text" id = NameOfTask placeholder="Название задачи...">
             <button type = "submit" >+ Добавить</button>
         </form>
     </header>
     <main>
+        <h2>Бэклог</h2>
         <ul id = FirstList >
             <li>Выучить JS</li>
             <li>Выучить React</li>
             <li>Сделать домашку</li>
+        </ul>
+        <h2>В процессе</h2>
+        <ul id = SecondList>
+            <li>Выпить смузи</li>
+            <li>Попить воды</li>
+        </ul>
+        <h2>Готово</h2>
+        <ul id = ThirdList>
+            <li>Позвонить маме</li>
+            <li>Погладить кота</li>
+        </ul>
+        <h2>Корзина</h2>
+        <ul id = FourthList>
+            <li>Сходить погулять</li>
+            <li>Прочитать "Войну и Мир"</li>
         </ul>
         <button type = "submit" > ✕ Очистить</button>
     </main>
