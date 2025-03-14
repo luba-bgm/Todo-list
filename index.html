@@ -4,39 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Список задач</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header class="page-header">
         <h1>Список задач</h1>
-        <form id="NewTask">
+        <form class="InputTask">
             <h2>Новая задача</h2>
-            <input type = "text" id = NameOfTask placeholder="Название задачи...">
-            <button type = "submit" >+ Добавить</button>
+            <input type = "text" placeholder="Название задачи...">
+            <button class="add-btn" type = "submit" >+ Добавить</button>
         </form>
     </header>
     <main>
         <h2>Бэклог</h2>
-        <ul id = FirstList >
+        <ul class = BacklogList >
             <li>Выучить JS</li>
             <li>Выучить React</li>
             <li>Сделать домашку</li>
         </ul>
         <h2>В процессе</h2>
-        <ul id = SecondList>
+        <ul class = InProgressList>
             <li>Выпить смузи</li>
             <li>Попить воды</li>
         </ul>
         <h2>Готово</h2>
-        <ul id = ThirdList>
+        <ul class = DoneList>
             <li>Позвонить маме</li>
             <li>Погладить кота</li>
         </ul>
         <h2>Корзина</h2>
-        <ul id = FourthList>
+        <ul id = TrashList>
             <li>Сходить погулять</li>
             <li>Прочитать "Войну и Мир"</li>
         </ul>
-        <button type = "submit" > ✕ Очистить</button>
+        <button class="clear-btn" type = "submit" > ✕ Очистить</button>
     </main>
 </body>
 </html>
