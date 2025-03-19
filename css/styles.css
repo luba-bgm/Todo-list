@@ -1,132 +1,158 @@
+:root {
+  --default-corner-radius: 10px;
+  --default-font-size: 15px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e9f1fb;
-    margin: 0;
-    padding: 20px;
-}
-
-.page-header {
-    background-color: #1e73e8;
-    color: white;
-    padding: 15px;
-    text-align: left;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.InputTask {
-    background-color: white;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 20px 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 40%; 
-}
-
-.InputTask input {
-    flex-grow: 1;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.add-btn {
-    background-color: #1e73e8;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
+  background-color: #eef4fb;
+  
 }
 
 main {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
+  padding: 23px 28px;
 }
 
-h2 {
-    font-size: 16px;
-    padding: 8px;
-    border-radius: 10px;
-    text-align: center;
-    width: fit-content;
-    margin: 0 auto 10px;
+.header {
+  background-color: #2f80ed;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.header h1 {
+  color: white;
+  padding: 25px 35px;
+  margin: 0;
 }
 
-li {
-    background-color: white;
-    padding: 10px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-    border-left: 8px solid; 
+.new-task {
+  border-radius: var(--default-corner-radius);
+  background: white;
+  padding: 20px;
+  width: fit-content;
 }
 
-.BacklogList, .InProgressList, .DoneList, #TrashList {
-    width: 22%;
-    min-width: 200px;
-    padding: 10px;
-    border-radius: 10px;
+.new-task h1 {
+  background-color: white;
+  font-size: 25px;
+  margin-bottom: 10px;
 }
 
-.BacklogList {
-    background-color: #d9d9d9;
-}
-.BacklogList h2 {
-    background-color: #bfbfbf;
-    color: #808080;
+.new-task .add-task {
+  background-color: white;
+  display: flex;
+  gap: 20px;
 }
 
-.InProgressList {
-    background-color: #b3d9ff;
-}
-.InProgressList h2 {
-    background-color: #99c9ff;
-    color: #6699cc;
-}
-
-.DoneList {
-    background-color: #c8f7c5;
-}
-.DoneList h2 {
-    background-color: #a9e0a5;
-    color: #76b175;
+.new-task input[type=text] {
+  border-radius: var(--default-corner-radius);
+  outline: none;
+  padding: 10px;
+  font-size: var(--default-font-size);
+  color: #e4e1e1;
+  background-color: white;
+  border: 1px solid #e4e1e1;
 }
 
-#TrashList {
-    background-color: #f7c5c5;
-}
-#TrashList h2 {
-    background-color: #e0a5a5;
-    color: #b17575;
+.new-task input[type=text]::placeholder {
+  font-size: var(--default-font-size);
+  color: #e4e1e1;
 }
 
-.BacklogList li { border-left-color: #808080; }
-.InProgressList li { border-left-color: #6699cc; }
-.DoneList li { border-left-color: #76b175; }
-#TrashList li { border-left-color: #b17575; }
+.new-task button {
+  background-color: #2f80ed;
+  color: white;
+  border-radius: var(--default-corner-radius);
+  padding: 13px 40px;
+  font-size: var(--default-font-size);
+  font-weight: bold;
+  cursor: pointer;
+  border: 0;
+}
+
+.new-task button:hover {
+  background-color: #0056b3;
+}
+
+.tasks {
+  margin-top: 35px;
+  display: flex;
+  column-gap: 50px;
+}
+
+.tasks h3 {
+  padding: 10px 15px;
+  border-radius: var(--default-corner-radius);
+  margin-bottom: 20px;
+  font-weight: 500;
+  width: fit-content;
+}
+
+.tasks li {
+  list-style-type: none;
+  font-weight: 600;
+  font-size: var(--default-font-size);
+  padding: 20px;
+  background-color: white;
+  border-radius: var(--default-corner-radius);
+  margin: 10px 0;
+}
+
+.list {
+  flex: 1 1 auto;
+}
+
+.backlog h3 {
+  background-color: #e3e3e3;
+  color: #8e9092;
+}
+
+.backlog li {
+  border-left: 5px solid #e3e3e3;
+}
+
+.in-progress h3 {
+  background-color: #d6e7ff;
+  color: #5c9bf2;
+}
+
+.in-progress li {
+  border-left: 5px solid #d6e7ff;
+}
+
+.done h3 {
+  background-color: #d7f9e0;
+  color: #8acea0;
+}
+
+.done li {
+  border-left: 5px solid #d7f9e0;
+}
+
+.trash h3 {
+  background-color: #fbe3e3;
+  color: #da8e8b;
+}
+
+.trash li {
+  border-left: 5px solid #fbe3e3;
+}
 
 .clear-btn {
-    background-color: #d9534f;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: block;
-    margin: 10px auto;
-    font-size: 14px;
+  background-color: #c9666c;
+  color: white;
+  padding: 15px 0;
+  border: 0px;
+  border-radius: var(--default-corner-radius);
+  width: 100%;
+  font-weight: bold;
+  font-size: var(--default-font-size);
+}
+
+.clear-btn:hover {
+  background-color: #b3464d;
 }
