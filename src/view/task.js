@@ -1,9 +1,9 @@
 import BaseComponent from "../framework/base-component.js";
 
 function createTaskTemplate() {
-    return (
-        `<li>Название первой задачи</li>`
-    );
+    return `
+        <li class="task-item">Название первой задачи</li>
+    `;
 }
 
 export default class TaskComponent extends BaseComponent {

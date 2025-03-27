@@ -79,31 +79,48 @@ main {
 
 .tasks {
   margin-top: 35px;
+  display: flex; /* Располагаем блоки в одну строку */
+  gap: 20px; /* Отступы между блоками */
+  justify-content: space-between; /* Разделяет блоки по ширине */
+}
+
+.tasks > div {
   display: flex;
-  column-gap: 50px;
+  flex-direction: column; 
+  width: 30%; 
 }
 
 .tasks h3 {
   padding: 10px 15px;
   border-radius: var(--default-corner-radius);
-  margin-bottom: 20px;
+  background-color: #e3e3e3;
+  color: #68727b;
   font-weight: 500;
   width: fit-content;
 }
 
 .tasks li {
   list-style-type: none;
-  font-weight: 600;
+  font-weight: 500;
   font-size: var(--default-font-size);
-  padding: 20px;
+  padding: 15px;
+  color: #000;
   background-color: white;
   border-radius: var(--default-corner-radius);
   margin: 10px 0;
+  border-left: 6px solid #e3e3e3;
 }
 
-.list {
-  flex: 1 1 auto;
+.tasks-list {
+  display: flex;
+  flex-direction: column; /* Список остается вертикальным */
+  gap: 10px;
+  padding: 0;
+
 }
+/* .list {
+  flex: 1 1 auto;
+} */
 
 /*.backlog h3 {
   background-color: #e3e3e3;
@@ -141,7 +158,7 @@ main {
   border-left: 5px solid #fbe3e3;
 }*/
 
-.clear-btn {
+/* .clear-btn {
   background-color: #c9666c;
   color: white;
   padding: 15px 0;
@@ -154,4 +171,4 @@ main {
 
 .clear-btn:hover {
   background-color: #b3464d;
-}
+} */
