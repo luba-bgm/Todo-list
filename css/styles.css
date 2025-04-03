@@ -79,9 +79,9 @@ main {
 
 .tasks {
   margin-top: 35px;
-  display: flex; /* Располагаем блоки в одну строку */
-  gap: 20px; /* Отступы между блоками */
-  justify-content: space-between; /* Разделяет блоки по ширине */
+  display: flex; 
+  gap: 20px; 
+  justify-content: space-between; 
 }
 
 .tasks > div {
@@ -113,16 +113,12 @@ main {
 
 .tasks-list {
   display: flex;
-  flex-direction: column; /* Список остается вертикальным */
+  flex-direction: column;
   gap: 10px;
   padding: 0;
 
 }
-/* .list {
-  flex: 1 1 auto;
-} */
-
-/*.backlog h3 {
+.backlog h3 {
   background-color: #e3e3e3;
   color: #8e9092;
 }
@@ -149,16 +145,16 @@ main {
   border-left: 5px solid #d7f9e0;
 }
 
-.trash h3 {
+.basket h3 {
   background-color: #fbe3e3;
-  color: #da8e8b;
+  color: #9e4f4c;
 }
 
-.trash li {
+.basket li {
   border-left: 5px solid #fbe3e3;
-}*/
+}
 
-/* .clear-btn {
+.clear-button {
   background-color: #c9666c;
   color: white;
   padding: 15px 0;
@@ -169,6 +165,6 @@ main {
   font-size: var(--default-font-size);
 }
 
-.clear-btn:hover {
+.clear-button:hover {
   background-color: #b3464d;
-} */
+}
