@@ -168,3 +168,17 @@ main {
 .clear-button:hover {
   background-color: #b3464d;
 }
+
+.stub {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%2368727bFF' stroke-width='1' stroke-dasharray='6' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+
+  border-radius: var(--default-corner-radius);
+  color: #68727b;
+  font-weight: 500;
+  font-size: var(--default-font-size); 
+  padding: 15px;
+  margin: 10px 0; 
+  display: flex;
+  align-items: center;
+}
+

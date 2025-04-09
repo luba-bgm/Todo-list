@@ -1,4 +1,4 @@
-import BaseComponent from "../framework/base-component.js";
+import AbstractComponent from "../framework/view/abstract-component.js";
  
  function createClearButtonTemplate() {
      return (
@@ -7,9 +7,9 @@ import BaseComponent from "../framework/base-component.js";
          `
      )
  }
- 
- export default class ClearButtonComponent extends BaseComponent {
-     getTemplate() {
+
+ export default class ClearButtonComponent extends AbstractComponent {
+     get template() {
          return createClearButtonTemplate();
      }
  }
