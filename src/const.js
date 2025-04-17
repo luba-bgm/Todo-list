@@ -11,4 +11,3 @@ export const StatusLabel = {
     [Status.DONE]: `Готово`,
     [Status.BASKET]: `Корзина`
 };
-
