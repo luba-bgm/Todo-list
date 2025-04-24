@@ -4,6 +4,7 @@ import { render } from '../framework/render.js';
 import DeskComponent from "../view/task-board-component.js";
 import StubComponent from "../view/stub-component.js";
 import ClearButtonComponent from "../view/clear-button-component.js";
+import { Status } from "../const.js"; 
 
 
 export default class TaskBoardPresenter {
@@ -59,30 +60,39 @@ export default class TaskBoardPresenter {
     }
 
     #renderTaskList(status, tasks) {
-        const list = new TasksListComponent(status);
+        const list = new TasksListComponent(status, this.#handleTaskDrop.bind(this));
 
         render(list, this.#taskDeskComponent.element);
 
         tasks.length === 0 ? this.#renderStubComponent(list) : tasks.forEach((task) => {
-            this.#renderTask(task.name, list);
+            this.#renderTask(task, list);
         });
     }
 
     #renderTask(task, container) {
-        render(new TaskComponent(task), container.element.querySelector('.task-container'));
+        render(new TaskComponent(task), container.element.querySelector('ul'));
     }
 
     #renderClearButton() {
         const basketContainer = document.querySelector('.basket');
-    
-        if (basketContainer) {
-            render(
-                new ClearButtonComponent({ onClick: this.clearBasket.bind(this) }),
-                basketContainer
-            );
+      
+        if (!basketContainer) return;
+      
+        render(this.#clearButtonComponent, basketContainer);
+      
+        const basketTasks = this.#tasksModel.getTasksByStatus(Status.BASKET)?.tasks || [];
+      
+        if (basketTasks.length === 0) {
+          this.#clearButtonComponent.disable();
+        } else {
+          this.#clearButtonComponent.enable();
         }
-    }
+      }
+      
     
+    #handleTaskDrop(newStatus, taskId, droppedTask) {
+        this.#tasksModel.updateTaskStatus(newStatus, taskId, droppedTask);
+    }
 
     #renderStubComponent(container) {
         render(new StubComponent(), container.element);
@@ -96,5 +106,7 @@ export default class TaskBoardPresenter {
     #handleModelChange() {
         this.#clearBoard();
         this.#renderBoard();
+        this.#renderClearButton(); 
     }
+    
 }

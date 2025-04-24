@@ -7,7 +7,7 @@ import ClearButtonComponent from './view/clear-button-component.js'
 
 const bodyContainer = document.querySelector('.page-body');
 const addTaskContainer = document.querySelector('.add-new-task-component');
-const deskContainer = document.querySelector('.main-content');
+const deskContainer = document.querySelector('.task-board-container');
 
 const tasksModel = new TasksModel();
 

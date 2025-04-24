@@ -23,6 +23,17 @@ import AbstractComponent from "../framework/view/abstract-component.js";
 
      #clearHandler = (evt) => {
         evt.preventDefault();
-        this.#handleClick();
-    }
- }
+        if (!this.element.disabled) {
+            this.#handleClick();
+          }
+        };
+      
+        disable() {
+          this.element.disabled = true;
+        }
+      
+        enable() {
+          this.element.disabled = false;
+        }
+      }
+      
