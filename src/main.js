@@ -4,12 +4,17 @@ import AddNewTaskComponent from './view/task-form-component.js';
 import TaskBoadPresenter from './presenter/task-board-presenter.js';
 import TasksModel from './model/task-model.js';
 import ClearButtonComponent from './view/clear-button-component.js'
+import TaskApiServices from './task-apiservices.js'
+ 
+ const END_POINT = 'https://68134bb0129f6313e210d608.mockapi.io';
 
 const bodyContainer = document.querySelector('.page-body');
 const addTaskContainer = document.querySelector('.add-new-task-component');
 const deskContainer = document.querySelector('.task-board-container');
 
-const tasksModel = new TasksModel();
+const tasks = new TasksModel({
+    tasksApiServices: new TaskApiServices(END_POINT)
+});
 
 const clearButtonComponent = new ClearButtonComponent({
     onClick: handleClearBasketButtonClick
@@ -17,7 +22,7 @@ const clearButtonComponent = new ClearButtonComponent({
 
 const taskBoardPresenter = new TaskBoadPresenter({
     boardContainer: deskContainer,
-    tasksModel: tasksModel,
+    tasksModel: tasks,
     clearButtonComponent: clearButtonComponent
  });
  

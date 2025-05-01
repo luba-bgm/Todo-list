@@ -183,3 +183,6 @@ main {
   align-items: center;
 }
 
+.board-no-task {
+  font-size: 30px;
+}

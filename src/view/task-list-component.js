@@ -11,8 +11,6 @@ function createTasksListTemplate(label, status) {
 }
 
 export default class TasksListComponent extends AbstractComponent {
-  // _element = null;
-  // _onTaskDrop = null;
 
   constructor(status, onTaskDrop) {
     super();
@@ -24,14 +22,6 @@ export default class TasksListComponent extends AbstractComponent {
     const label = StatusLabel[this.status];
     return createTasksListTemplate(label, this.status);
   }
-
-  // get element() {
-  //   if (!this._element) {
-  //     this._element = super.element;
-  //     this.#setDropHandler();
-  //   }
-  //   return this._element;
-  // }
 
   #setDropHandler(onTaskDrop) {
     const container = this.element;

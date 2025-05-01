@@ -14,7 +14,7 @@ import AbstractComponent from "../framework/view/abstract-component.js";
     }
 
     get template() {
-        return createTaskTemplate(this.task.id, this.task.name);
+        return createTaskTemplate(this.task.id, this.task.title);
      }
  
     #afterCreateElement() {
